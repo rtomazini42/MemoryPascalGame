@@ -1,0 +1,17 @@
+program ProjectMemory;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  TelaInicial in '..\Units\TelaInicial.pas' {Inicio},
+  Config in '..\Units\Config.pas' {Configurar},
+  GameStatus in '..\Units\GameStatus.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TInicio, Inicio);
+  Application.CreateForm(TConfigurar, Configurar);
+  Application.Run;
+end.

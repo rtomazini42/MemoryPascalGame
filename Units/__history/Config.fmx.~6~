@@ -1,0 +1,291 @@
+object Configurar: TConfigurar
+  Left = 0
+  Top = 0
+  Caption = 'Configurar'
+  ClientHeight = 720
+  ClientWidth = 480
+  Fill.Color = xFFFFF6D3
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = xFF7C3F58
+    Size.Width = 480.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label1: TLabel
+      Align = Center
+      StyledSettings = []
+      Size.Width = 330.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Pixel Digivolve'
+      TextSettings.Font.Size = 36.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = xFFFFF6D3
+      TextSettings.HorzAlign = Center
+      Text = 'Configura'#231#245'es'
+      TabOrder = 0
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 480.000000000000000000
+    Size.Height = 615.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Layout2: TLayout
+      Align = Top
+      Size.Width = 480.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object PlayBtn: TRectangle
+        Align = Center
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Size.Width = 140.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object QuantidadePares: TLabel
+          Align = Center
+          StyledSettings = []
+          Size.Width = 306.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = '6'
+          TabOrder = 0
+        end
+      end
+      object Rectangle2: TRectangle
+        Align = Left
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Margins.Left = 30.000000000000000000
+        Margins.Top = 50.000000000000000000
+        Margins.Bottom = 50.000000000000000000
+        Position.X = 30.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = Rectangle2Click
+        object Label2: TLabel
+          Align = Client
+          StyledSettings = []
+          Size.Width = 65.000000000000000000
+          Size.Height = 51.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = '-'
+          TabOrder = 0
+        end
+      end
+      object Rectangle3: TRectangle
+        Align = Right
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Margins.Top = 50.000000000000000000
+        Margins.Right = 30.000000000000000000
+        Margins.Bottom = 50.000000000000000000
+        Position.X = 385.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = Rectangle3Click
+        object Label3: TLabel
+          Align = Client
+          StyledSettings = []
+          Size.Width = 65.000000000000000000
+          Size.Height = 51.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = '+'
+          TabOrder = 0
+        end
+      end
+      object Label4: TLabel
+        Align = Top
+        StyledSettings = []
+        Size.Width = 480.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF7C3F58
+        TextSettings.HorzAlign = Center
+        Text = 'N'#250'mero de pares'
+        TabOrder = 0
+      end
+    end
+    object Layout3: TLayout
+      Align = Top
+      Position.Y = 200.000000000000000000
+      Size.Width = 480.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      Visible = False
+      TabOrder = 1
+      object Rectangle4: TRectangle
+        Align = Center
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Size.Width = 140.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Label5: TLabel
+          Align = Center
+          StyledSettings = []
+          Size.Width = 306.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = '6'
+          TabOrder = 0
+        end
+      end
+      object Rectangle5: TRectangle
+        Align = Left
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Margins.Left = 30.000000000000000000
+        Margins.Top = 50.000000000000000000
+        Margins.Bottom = 50.000000000000000000
+        Position.X = 30.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Label6: TLabel
+          Align = Client
+          StyledSettings = []
+          Size.Width = 65.000000000000000000
+          Size.Height = 51.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = '-'
+          TabOrder = 0
+        end
+      end
+      object Rectangle6: TRectangle
+        Align = Right
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Margins.Top = 50.000000000000000000
+        Margins.Right = 30.000000000000000000
+        Margins.Bottom = 50.000000000000000000
+        Position.X = 385.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Label7: TLabel
+          Align = Client
+          StyledSettings = []
+          Size.Width = 65.000000000000000000
+          Size.Height = 51.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = '+'
+          TabOrder = 0
+        end
+      end
+      object Label8: TLabel
+        Align = Top
+        StyledSettings = []
+        Size.Width = 480.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF7C3F58
+        TextSettings.HorzAlign = Center
+        Text = 'N'#250'mero de pares'
+        TabOrder = 0
+      end
+    end
+    object Layout4: TLayout
+      Align = Top
+      Position.Y = 200.000000000000000000
+      Size.Width = 480.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle7: TRectangle
+        Align = Center
+        Cursor = crHandPoint
+        Fill.Color = xFFEB6B6F
+        Size.Width = 140.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        OnClick = Rectangle7Click
+        object Label9: TLabel
+          Align = Center
+          StyledSettings = []
+          Size.Width = 306.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 36.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = 'sair'
+          TabOrder = 0
+        end
+      end
+      object Label12: TLabel
+        Align = Top
+        StyledSettings = []
+        Size.Width = 480.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF7C3F58
+        TextSettings.HorzAlign = Center
+        TabOrder = 0
+      end
+    end
+  end
+end

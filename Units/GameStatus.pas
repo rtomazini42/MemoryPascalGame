@@ -1,0 +1,18 @@
+unit GameStatus;
+
+interface
+var
+  numPares: Integer;
+function getNumPares: Integer;
+procedure setNumPares(newValue: Integer);
+implementation
+function getNumPares: Integer;
+begin
+  Result := numPares;
+end;
+procedure setNumPares(newValue: Integer);
+begin
+  numPares := newValue;
+end;
+end.
+

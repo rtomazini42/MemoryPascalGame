@@ -1,0 +1,85 @@
+unit TelaInicial;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, FMX.Layouts;
+
+type
+  TInicio = class(TForm)
+    Rectangle1: TRectangle;
+    Label1: TLabel;
+    Conteudo: TLayout;
+    Baixo: TLayout;
+    PlayBtn: TRectangle;
+    Label2: TLabel;
+    ConfigBtn: TRectangle;
+    Label3: TLabel;
+    Rectangle2: TRectangle;
+    Label4: TLabel;
+    Rectangle3: TRectangle;
+    Label5: TLabel;
+    Rectangle4: TRectangle;
+    Label6: TLabel;
+    procedure Label4Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure ConfigBtnClick(Sender: TObject);
+    procedure Rectangle2Click(Sender: TObject);
+    procedure PlayBtnClick(Sender: TObject);
+    procedure Rectangle4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Inicio: TInicio;
+
+implementation
+
+{$R *.fmx}
+
+uses GameStatus, Config, GameTela, RecordsTela;
+
+procedure TInicio.ConfigBtnClick(Sender: TObject);
+begin
+  Application.CreateForm(TConfigurar, Configurar);
+
+  // Mostrar a janela de configurações
+  Configurar.Show;
+end;
+
+procedure TInicio.FormCreate(Sender: TObject);
+begin
+  setNumPares(6);
+
+end;
+
+procedure TInicio.Label4Click(Sender: TObject);
+begin
+  self.Close;
+end;
+
+procedure TInicio.PlayBtnClick(Sender: TObject);
+begin
+  //ShowMessage('');
+  Application.CreateForm(TGameLoop, GameLoop);
+   GameLoop.Show;
+
+end;
+
+procedure TInicio.Rectangle2Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TInicio.Rectangle4Click(Sender: TObject);
+begin
+    Application.CreateForm(TRecords, Records);
+     Records.Show;
+end;
+
+end.

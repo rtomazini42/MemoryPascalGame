@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/07/27 11:39:50.000.745,=D:\Users\Tomazini\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/10/06 00:10:52.000.025,=D:\Users\Tomazini\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/10/06 00:26:19.000.920,D:\Users\Tomazini\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\Tomazini\Desktop\MemoryGame\Units\TelaInicial.pas</Transaction>
+    <Transaction>2023/10/06 00:26:19.000.920,D:\Users\Tomazini\Documents\Embarcadero\Studio\Projects\Unit2.fmx=C:\Users\Tomazini\Desktop\MemoryGame\Units\TelaInicial.fmx</Transaction>
+    <Transaction>2023/10/06 00:27:02.000.734,D:\Users\Tomazini\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Tomazini\Desktop\MemoryGame\Project\ProjectMemory.dproj</Transaction>
+    <Transaction>2023/10/06 00:27:46.000.297,=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/06 00:37:39.000.696,C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas=C:\Users\Tomazini\Desktop\MemoryGame\Units\Config.pas</Transaction>
+    <Transaction>2023/10/06 00:37:39.000.696,C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.fmx=C:\Users\Tomazini\Desktop\MemoryGame\Units\Config.fmx</Transaction>
+    <Transaction>2023/10/06 00:38:11.000.710,=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/06 00:38:22.000.151,C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas=C:\Users\Tomazini\Desktop\MemoryGame\Units\GameStatus.pas</Transaction>
+    <Transaction>2023/10/06 02:24:42.000.203,=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/06 02:25:50.000.864,C:\Users\Tomazini\Desktop\MemoryGame\Units\Game.fmx=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.fmx</Transaction>
+    <Transaction>2023/10/06 02:25:50.000.864,C:\Users\Tomazini\Desktop\MemoryGame\Units\Game.pas=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/06 02:37:03.000.752,C:\Users\Tomazini\Desktop\MemoryGame\Units\Game.pas=C:\Users\Tomazini\Desktop\MemoryGame\Units\GameTela.pas</Transaction>
+    <Transaction>2023/10/06 02:37:03.000.752,C:\Users\Tomazini\Desktop\MemoryGame\Units\Game.fmx=C:\Users\Tomazini\Desktop\MemoryGame\Units\GameTela.fmx</Transaction>
+    <Transaction>2023/10/16 14:16:09.000.151,=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/16 14:16:19.000.587,=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/16 14:24:56.000.857,C:\Users\Tomazini\Desktop\MemoryGame\Units\RecordsTela.pas=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.pas</Transaction>
+    <Transaction>2023/10/16 14:24:56.000.857,C:\Users\Tomazini\Desktop\MemoryGame\Units\RecordsTela.fmx=C:\Users\Tomazini\Desktop\MemoryGame\Project\Unit1.fmx</Transaction>
+    <Transaction>2023/10/16 18:28:27.000.748,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\0.png</Transaction>
+    <Transaction>2023/10/16 18:28:27.000.963,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (12).png</Transaction>
+    <Transaction>2023/10/16 18:28:27.000.818,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (10).png</Transaction>
+    <Transaction>2023/10/16 18:28:27.000.917,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (11).png</Transaction>
+    <Transaction>2023/10/16 18:28:27.000.993,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (13).png</Transaction>
+    <Transaction>2023/10/16 18:28:27.000.792,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (1).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.188,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (5).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.079,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (3).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.251,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (6).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.293,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (7).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.046,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (2).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.151,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (4).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.391,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (9).png</Transaction>
+    <Transaction>2023/10/16 18:28:28.000.348,=C:\Users\Tomazini\Desktop\Memory\assets\imgs\img (8).png</Transaction>
+    <Transaction>2023/10/16 18:44:05.000.607,=C:\Users\Tomazini\AppData\Local\Microsoft\Windows\Fonts\Pixel Digivolve.otf</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android64="" Android=""/>
+	</ActiveMobileDevice>
+</BorlandProject>

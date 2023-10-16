@@ -1,0 +1,191 @@
+object Inicio: TInicio
+  Left = 0
+  Top = 0
+  Caption = 'Game'
+  ClientHeight = 720
+  ClientWidth = 480
+  Fill.Color = xFFFFF6D3
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = xFF7C3F58
+    Size.Width = 480.000000000000000000
+    Size.Height = 105.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label1: TLabel
+      Align = Center
+      StyledSettings = []
+      Size.Width = 306.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Pixel Digivolve'
+      TextSettings.Font.Size = 36.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = xFFFFF6D3
+      TextSettings.HorzAlign = Center
+      Text = 'Retro Memory'
+      TabOrder = 0
+    end
+  end
+  object Conteudo: TLayout
+    Align = Client
+    Size.Width = 480.000000000000000000
+    Size.Height = 615.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Baixo: TLayout
+      Align = Bottom
+      Position.Y = 565.000000000000000000
+      Size.Width = 480.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle3: TRectangle
+        Align = Client
+        Cursor = crHandPoint
+        Fill.Color = xFFF9A875
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Label5: TLabel
+          Align = Center
+          StyledSettings = []
+          Size.Width = 306.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Pixel Digivolve'
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFFFFF6D3
+          TextSettings.HorzAlign = Center
+          Text = 'Por Renan Tomazini'
+          TabOrder = 0
+        end
+      end
+    end
+    object PlayBtn: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFEB6B6F
+      Margins.Left = 100.000000000000000000
+      Margins.Top = 50.000000000000000000
+      Margins.Right = 100.000000000000000000
+      Position.X = 100.000000000000000000
+      Position.Y = 50.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      OnClick = PlayBtnClick
+      object Label2: TLabel
+        Align = Center
+        StyledSettings = []
+        Size.Width = 306.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFFFFF6D3
+        TextSettings.HorzAlign = Center
+        Text = 'PLAY'
+        TabOrder = 0
+      end
+    end
+    object ConfigBtn: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFEB6B6F
+      Margins.Left = 100.000000000000000000
+      Margins.Top = 50.000000000000000000
+      Margins.Right = 100.000000000000000000
+      Position.X = 100.000000000000000000
+      Position.Y = 175.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      OnClick = ConfigBtnClick
+      object Label3: TLabel
+        Align = Center
+        StyledSettings = []
+        Size.Width = 306.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFFFFF6D3
+        TextSettings.HorzAlign = Center
+        Text = 'CONFIGURAR'
+        TabOrder = 0
+      end
+    end
+    object Rectangle2: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFEB6B6F
+      Margins.Left = 100.000000000000000000
+      Margins.Top = 50.000000000000000000
+      Margins.Right = 100.000000000000000000
+      Position.X = 100.000000000000000000
+      Position.Y = 425.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      OnClick = Rectangle2Click
+      object Label4: TLabel
+        Align = Center
+        StyledSettings = []
+        Size.Width = 306.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFFFFF6D3
+        TextSettings.HorzAlign = Center
+        Text = 'SAIR'
+        TabOrder = 0
+        OnClick = Label4Click
+      end
+    end
+    object Rectangle4: TRectangle
+      Align = Top
+      Cursor = crHandPoint
+      Fill.Color = xFFEB6B6F
+      Margins.Left = 100.000000000000000000
+      Margins.Top = 50.000000000000000000
+      Margins.Right = 100.000000000000000000
+      Position.X = 100.000000000000000000
+      Position.Y = 300.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      OnClick = Rectangle4Click
+      object Label6: TLabel
+        Align = Center
+        StyledSettings = []
+        Size.Width = 306.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Pixel Digivolve'
+        TextSettings.Font.Size = 36.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFFFFF6D3
+        TextSettings.HorzAlign = Center
+        Text = 'RECORDES'
+        TabOrder = 0
+      end
+    end
+  end
+end

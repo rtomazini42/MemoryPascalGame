@@ -1,0 +1,281 @@
+unit GameTela;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  System.ImageList, FMX.ImgList, FMX.Controls.Presentation, FMX.StdCtrls,
+  FMX.Objects, FMX.Layouts, System.Generics.Collections;
+
+
+type
+  TGameLoop = class(TForm)
+    ImageList1: TImageList;
+    Rectangle1: TRectangle;
+    Label1: TLabel;
+    Pontuacao: TLabel;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    Layout3: TLayout;
+    Rectangle2: TRectangle;
+    Voltar: TLabel;
+    Image1: TImage;
+    Timer1: TTimer;
+    Timer2: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure VenceuJogo();
+    //procedure Image2Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
+    procedure VoltarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  GameLoop: TGameLoop;
+  ParSelecionado: Boolean;
+  Par : Integer;
+  tagStr: string;
+  linha, coluna: string;
+  FirstCardIndex, FirstCardRow, FirstCardCol: Integer;
+   FirstSelectedCard, SecondSelectedCard: TImage;
+   Combo: integer;
+   TimePnt: integer;
+
+   paresFeitos : integer;
+implementation
+
+{$R *.fmx}
+
+uses GameStatus;
+
+procedure TGameLoop.FormCreate(Sender: TObject);
+var
+  i, j, temp, randomIndex, rowIndex, colIndex: Integer;
+  img: TImage;
+  numPares: Integer;
+  tam: TSizeF;
+  indices: array of Integer;
+begin
+  paresFeitos := 0;
+  TimePnt := 100;
+  Combo := 0;
+  FirstSelectedCard := nil; SecondSelectedCard := nil;
+  Timer1.Interval := 1000; // 1 segundo, ajuste conforme necessário
+  Timer1.Enabled := False;
+  //Timer1.OnTimer := Timer1Timer;
+  numPares := GameStatus.getNumPares;
+  tam.cx := 64;
+  tam.cy := 64;
+
+  if numPares > ImageList1.Count - 1 then
+    numPares := ImageList1.Count - 1;
+
+  SetLength(indices, numPares * 2);
+  for i := 0 to numPares * 2 - 1 do
+    indices[i] := (i div 2) + 1; // Começa a partir do índice 1 para evitar o verso do card
+
+  // Algoritmo de Fisher-Yates para embaralhar os índices
+  for i := High(indices) downto 1 do
+  begin
+    randomIndex := Random(i + 1);
+    temp := indices[i];
+    indices[i] := indices[randomIndex];
+    indices[randomIndex] := temp;
+  end;
+
+  rowIndex := 0;
+  colIndex := 0;
+
+  for i := 0 to High(indices) do
+  begin
+    img := TImage.Create(Layout2);
+    img.Parent := Layout2;
+    img.Width := 64;
+    img.Height := 64;
+    img.Position.X := colIndex * (img.Width + 10);
+    img.Position.Y := rowIndex * (img.Height + 10);
+    img.Bitmap.Assign(ImageList1.Bitmap(tam, 0)); // Inicialmente, mostre o verso do card
+    img.TagString := 'l='+rowIndex.ToString+ 'c='+ colIndex.ToString + 'img'+indices[i].ToString; // O índice real da imagem é armazenado em TagString
+    img.OnClick := Image1Click;
+
+    Inc(colIndex);
+    if colIndex >= 4 then
+    begin
+      colIndex := 0;
+      Inc(rowIndex);
+    end;
+  end;
+   //Par := -1;
+  //ShowMessage(GameStatus.getNumPares.ToString);
+end;
+
+
+procedure TGameLoop.Image1Click(Sender: TObject);
+var
+  tam: TSizeF;
+  imgIndex, posImg: Integer;
+  strImgIndex, strRow, strCol: string;
+begin
+  tam.cx := 64;
+  tam.cy := 64;
+
+  if Sender is TImage then
+  begin
+    if ParSelecionado then
+    begin
+      SecondSelectedCard := Sender as TImage;
+
+      posImg := Pos('img', (Sender as TImage).TagString);
+      strImgIndex := Copy((Sender as TImage).TagString, posImg + 3, Length((Sender as TImage).TagString));
+      imgIndex := StrToInt(strImgIndex);
+
+      SecondSelectedCard.Bitmap.Assign(ImageList1.Bitmap(tam, imgIndex));  // Virando o segundo card
+
+      if Par = imgIndex then
+      begin
+        Pontuacao.Text := (Pontuacao.Text.ToInteger + 1 + Combo + TimePnt).ToString;
+        Combo := Combo + 1;
+        ParSelecionado := False;
+        paresFeitos := paresFeitos + 1;
+        if paresFeitos = GameStatus.getNumPares then
+          VenceuJogo;
+
+        Par := -1;
+
+        // Desabilita o OnClick para ambos os cards
+        FirstSelectedCard.OnClick := nil;
+        SecondSelectedCard.OnClick := nil;
+      end
+      else
+      begin
+        Combo := 0;
+        Timer1.Enabled := True;
+      end;
+    end
+    else
+    begin
+      strRow := Copy((Sender as TImage).TagString, Pos('l=', (Sender as TImage).TagString) + 2, 1);
+      strCol := Copy((Sender as TImage).TagString, Pos('c=', (Sender as TImage).TagString) + 2, 1);
+
+      posImg := Pos('img', (Sender as TImage).TagString);
+      strImgIndex := Copy((Sender as TImage).TagString, posImg + 3, Length((Sender as TImage).TagString));
+      imgIndex := StrToInt(strImgIndex);
+
+      FirstCardIndex := imgIndex;
+      FirstCardRow := StrToInt(strRow);
+      FirstCardCol := StrToInt(strCol);
+
+      (Sender as TImage).Bitmap.Assign(ImageList1.Bitmap(tam, imgIndex));
+      Par := imgIndex;
+      ParSelecionado := True;
+      FirstSelectedCard := Sender as TImage;
+    end;
+  end;
+end;
+
+
+{procedure TGameLoop.Image1Click(Sender: TObject);
+var
+  tam: TSizeF;
+  imgIndex, posImg: Integer;
+  strImgIndex, strRow, strCol: string;
+begin
+  tam.cx := 64;
+  tam.cy := 64;
+
+  if Sender is TImage then
+  begin
+    if ParSelecionado then
+    begin
+      SecondSelectedCard := Sender as TImage;
+
+      posImg := Pos('img', (Sender as TImage).TagString);
+      strImgIndex := Copy((Sender as TImage).TagString, posImg + 3, Length((Sender as TImage).TagString));
+      imgIndex := StrToInt(strImgIndex);
+
+      SecondSelectedCard.Bitmap.Assign(ImageList1.Bitmap(tam, imgIndex));  // Virando o segundo card
+
+      if Par = imgIndex then
+      begin
+        Pontuacao.Text := (Pontuacao.Text.ToInteger + 1).ToString;
+        ParSelecionado := False;
+        Par := -1;
+      end
+      else
+      begin
+        Timer1.Enabled := True;
+      end;
+    end
+    else
+    begin
+      strRow := Copy((Sender as TImage).TagString, Pos('l=', (Sender as TImage).TagString) + 2, 1);
+      strCol := Copy((Sender as TImage).TagString, Pos('c=', (Sender as TImage).TagString) + 2, 1);
+
+      posImg := Pos('img', (Sender as TImage).TagString);
+      strImgIndex := Copy((Sender as TImage).TagString, posImg + 3, Length((Sender as TImage).TagString));
+      imgIndex := StrToInt(strImgIndex);
+
+      FirstCardIndex := imgIndex;
+      FirstCardRow := StrToInt(strRow);
+      FirstCardCol := StrToInt(strCol);
+
+      (Sender as TImage).Bitmap.Assign(ImageList1.Bitmap(tam, imgIndex));
+      Par := imgIndex;
+      ParSelecionado := True;
+      FirstSelectedCard := Sender as TImage;
+    end;
+  end;
+end;}
+
+
+
+
+procedure TGameLoop.Timer1Timer(Sender: TObject);
+var
+  tam: TSizeF;
+begin
+  Timer1.Enabled := False;
+
+  tam.cx := 64;
+  tam.cy := 64;
+
+  if Assigned(FirstSelectedCard) then
+  begin
+    FirstSelectedCard.Bitmap.Assign(ImageList1.Bitmap(tam, 0));
+    FirstSelectedCard := nil;
+  end;
+
+  if Assigned(SecondSelectedCard) then
+  begin
+    SecondSelectedCard.Bitmap.Assign(ImageList1.Bitmap(tam, 0));
+    SecondSelectedCard := nil;
+  end;
+
+  ParSelecionado := False;
+  Par := -1;
+end;
+
+
+procedure TGameLoop.Timer2Timer(Sender: TObject);
+begin
+  TimePnt := TimePnt - 2;
+end;
+
+procedure TGameLoop.VenceuJogo;
+begin
+  ShowMessage('Voce ganhou o jogo! Pontos: ' + Pontuacao.Text);
+  Close;
+end;
+
+procedure TGameLoop.VoltarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.
