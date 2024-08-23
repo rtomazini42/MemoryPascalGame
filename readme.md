@@ -1,4 +1,4 @@
-## AQUI É PRIVADO
+## Jogo da memória feito em Delphi Pascal
 
-
-Escreve qualquer merda aqui, ninguém vai ver
+Deixar publico, jogue como  APK Android ou EXE, disponivel em:
+https://rtomazini.itch.io/pixel-memory
